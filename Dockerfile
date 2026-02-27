@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 # Metadata GHCR
-LABEL org.opencontainers.image.source="https://github.com/Juan-DlC/Parcial_API_Python"
+LABEL org.opencontainers.image.source="https://github.com/juan-dlc/Parcial_api_python"
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
