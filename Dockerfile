@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-LABEL org.opencontainers.image.source="https://github.com/Juan-DlC/parcial_api_python.git"
+LABEL org.opencontainers.image.source="https://github.com/juan-dlc/parcial_api_python.git"
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
