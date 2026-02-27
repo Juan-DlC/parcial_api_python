@@ -23,4 +23,4 @@ EXPOSE 8000
 
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port${PORT:-8000}"]
 
-LABEL org.opencontainers.image.source="https://github.com/juan-dlc/Parcial_api_python.git"
+LABEL org.opencontainers.image.source="https://github.com/juan-dlc/parcial_api_python.git"
