@@ -15,11 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Este paso convierte tu nombre de usuario y repo a minúsculas
+      - name: Lowercase repo name
+        run: |
+          echo "REPO_LOWER=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
+
       - name: Login to GHCR
         run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin 
 
       - name: Build image
-        run: docker build -t ghcr.io/${{ github.repository }}:latest .
+        # Usamos la variable en minúsculas que creamos arriba
+        run: docker build -t ghcr.io/${{ env.REPO_LOWER }}:latest .
 
       - name: Push image
-        run: docker push ghcr.io/${{ github.repository }}:latest .
+        # Usamos la variable en minúsculas aquí también
+        run: docker push ghcr.io/${{ env.REPO_LOWER }}:latest
